@@ -24,9 +24,9 @@ Production environment
 ### Setup Ad div Tag
 Place your ads div.
 ```javascript
-<!--ATP顶部广告位-->  
+<!--top ad banner-->  
 <div class="flex banner1"  id="atlaspAds-Top"></div>  
-<!--ATP底部广告位-->  
+<!--bottom ad banner-->  
 <div class="flex banner2"  id="atlaspAds-bottom"></div>
 ```
 ### SDK Options
@@ -106,7 +106,7 @@ Now sdk supports image format **png / jpeg**
 If you have any question during integration, please contact  
 AtlasProtocol dev team  [sdk@atlasp.io](mailto:sdk@atlasp.io) ，we will respond asap.
 
-For mobile client demo[移动端demo](http://releases.atlasp.io/sdk/SDK-WEB-DEMO/ATP-WEBSDK-DEMO.zip)
+For mobile client demo [mobile_demo](http://releases.atlasp.io/sdk/SDK-WEB-DEMO/ATP-WEBSDK-DEMO.zip)
 
 For more Atlas Protocol product [Atlas Product](https://www.atlaspro.io/product/)
 
