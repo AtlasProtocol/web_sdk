@@ -17,16 +17,15 @@
     "build/*"
   ],
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-config-synacor": "^1.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-synacor": "^3.0.4",
     "fast-async": "^6.3.8",
     "if-env": "^1.0.0",
-    "preact-cli": "^2.2.1",
-    "serve": "^10.1.1"
+    "serve": "^11.1.0"
   },
   "dependencies": {
+    "ky": "^0.11.2",
     "preact": "^8.2.6",
-    "preact-compat": "^3.17.0",
-    "ky": "^0.4.0"
+    "preact-compat": "^3.17.0"
   }
 }
