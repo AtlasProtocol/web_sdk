@@ -1,0 +1,26 @@
+pipelines:
+  default:
+      - step:
+          name: build SDK to WEBADS
+          image: node:8
+          caches:
+            - node
+          script: # Modify the commands below to build your repository.
+            - cd atlas-ads-h5
+            - echo "To install dependencies"
+            - yarn install
+            - echo "Finished installing dependencies"
+            - yarn run build:test
+            - yarn run build:prod
+            - echo "Build finished"
+          artifacts:
+            - atlas-ads-h5/build/**
+      - step:
+          name: Deploy to S3
+          trigger: manual
+          image: atlassian/pipelines-awscli
+          script:
+            - cd atlas-ads-h5/build
+            - aws s3 sync --delete . s3://releases.atlasp.io/libs/
+            - aws cloudfront create-invalidation --distribution-id "E3E6RNR1I5PLFJ" --path "/libs/*"
+

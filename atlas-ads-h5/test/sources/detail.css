@@ -1,0 +1,544 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+    font-family:"PingFangSC","微软雅黑";
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html,body,.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+    box-pack: justify;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    /* 09版 */
+    -webkit-box-orient: vertical;
+    /* 12版 */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+}
+.container{
+    width: 100%;
+    height: auto;
+    margin-bottom: .56rem;
+}
+
+.infor,.inforbot{
+    width: 100%;
+    height: 0.64rem;
+    background-color: rgba(255,255,255,1);
+    padding: 0 .15rem;
+    box-shadow: 0px 0px 0.08rem 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 0px 0.08rem 0px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 0px 0.08rem 0px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index:9999;
+    max-width: 750px;
+}
+.infor{top: 0}
+.inforbot{
+    bottom: 0;
+    background: url(/common/images/news/Groupbg.png) no-repeat bottom center #5CACFF;
+    background-size: 3.75rem .56rem;
+    height: .56rem;
+}
+.infor .text,.inforbot .text,.ios_open .text{
+    position: relative;
+    /*margin-top: .16rem;*/
+}
+.infor h4,.inforbot h4,.ios_open h4 {
+    height: 100%;
+}
+.infor .text,.inforbot .text,.ios_open .text {
+    padding-right: .1rem;
+    font-size: .15rem;
+}
+.inforbot .text{
+    padding-right: 0rem;
+}
+.infor .text h5,.inforbot .text h5,.ios_open .text h5 {
+    color: #333333;
+    font-size: .15rem;
+    font-weight: 600;
+}
+
+.infor .text p,.inforbot .text p,.ios_open .text p{
+    color: #BDBDBD;
+    font-size: .10rem;
+    margin-top: .04rem;
+}
+.inforbot .text h5{
+    color:#ffffff;
+}
+.inforbot .text p{
+    color: #ffffff;
+    font-size: .10rem;
+    font-weight: normal;
+}
+.infor h4 img,.inforbot h4 img,.ios_open h4 img {
+    width: .40rem;
+    height: .40rem;
+    margin-right: .08rem;
+    border-radius: 5px;
+}
+.inforbot h4 img{
+    width: .36rem;
+    height: .36rem;
+    border-radius: .18rem;
+}
+.infor>p,.inforbot>dl,.ios_open>p,.inforbot>p{
+    width: .85rem;
+    height: .38rem;
+    border-radius: .06rem;
+    border:1px solid #0263DE;
+    background-color: #fff;
+    padding:.10rem 0;
+    text-align: center;
+    font-size: .14rem;
+    color: #0D6CE2;
+    font-weight: 600;
+}
+.inforbot>p{
+    padding: 0;
+    line-height: .38rem;
+}
+.inforbot>dl{
+    background-color: #ffffff;
+    padding: 0;
+    font-weight: normal;
+    width: auto;
+}
+.inforbot>dl dt,.inforbot>dl dd{
+    color: #0263DE;
+    font-size: 0.10rem;
+}
+.fuceng {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    background-image: url(https://qiniustatic.if-chat.com/h5/staticv2/safariV2.png);
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+    z-index: 99999999;
+}
+
+.fuceng_android {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    background-image: url(https://qiniustatic.if-chat.com/h5/staticv2/browserV2.png);
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: none;
+    z-index: 99999999;
+}
+.empty_box{
+    width:100%;
+    height:.44rem;
+    margin-bottom: .55rem;
+}
+.empty_box{
+    width:100%;
+    height:.44rem;
+}
+.ios_open{
+    width:100%;
+    height: .56rem;
+    position: fixed;
+    bottom:0;
+    font-size: .15rem;
+    font-weight: 500;
+    text-align: center;
+    color:#4A4A4A;
+    display: none;
+    line-height: .56rem;
+    z-index: 99999;
+    background-color: #fff;
+    border-top: 1px solid #E7E7E7;
+}
+.ios_open .blue{
+    color:#0D6CE2;
+    font-size: .15rem;
+}
+.message .border-box{
+    position: relative;
+    width:.36rem;
+    height:.36rem;
+    border-radius: 50%;
+}
+.message .border-box .border{
+    -webkit-transform:scale(0.5);
+    transform:scale(0.5);
+    position:absolute;
+    border:0.01rem solid #e7e7e7;
+    top:-50%;
+    right:-50%;
+    bottom:-50%;
+    left:-50%;
+    border-radius: 50%;
+}
+.message .border-box img{
+    position:absolute;
+    left:0.005rem;
+    top:0.005rem;
+    z-index:2;
+    width:.34rem;
+    height:.34rem;
+    border-radius: 50%;
+}
+.message{
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 5px solid #F5F5F6;
+    margin-bottom: .54rem;
+    border-bottom: 1px solid transparent;
+}
+.message h2{
+    font-size:.15rem;
+    width:100%;
+    /*height:.44rem;*/
+    padding:.10rem .15rem;
+    /*line-height: .44rem;*/
+    border-bottom: 1px solid #E7E7E7;
+    font-weight: 600;
+}
+.message li{
+    width: 100%;
+    padding: 0 .20rem;
+    -moz-justify-content: space-between;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    -moz-box-align: start;
+    -webkit-box-align: start;
+    box-align: start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+}
+.message li .img-box{
+    width: auto;
+    height:100%;
+}
+.message li .img-box img{
+    width: .36rem;
+    height:.36rem;
+}
+.message li .name{
+    font-size: .15rem;
+    color: #6984A5;
+    margin-left: .10rem;
+}
+.message li .zan img{
+    width: .20rem;
+    height: auto;
+}
+.message li .zan span{
+    color: #BFBFBF;
+    font-size: .14rem;
+    margin-left: .09rem;
+}
+.message li .zan .blue{
+    color: #0263DE!important;
+}
+.message li .msg-content{
+    font-size: .13rem;
+    color: #333333;
+    margin-left: .44rem;
+    word-break: break-all;
+}
+.atcontent{
+    background-color: #F5F5F6;
+    font-size: .13rem;
+    color: #666666;
+    padding:.10rem;
+    margin-left: .44rem;
+    margin-top: .05rem;
+    border-radius: 2px;
+}
+.atcontent .atname{
+    color: #6984A5;
+    margin-right: .08rem;
+}
+.message li .time{
+    margin-left: .44rem;
+    color: #BDBDBD;
+    font-size: .12rem;
+    margin-top: .03rem;
+}
+.message .msg-top{
+    width: 100%;
+    border-bottom: 1px solid #F2F2F2;
+    padding: .10rem 0;
+}
+.message .msg-top .user-list{
+    width: 100%;
+    margin-bottom: .04rem;
+}
+.all-content{
+    position: relative;
+    /*margin-top: .64rem;*/
+    width: 100%;
+    height: auto;
+}
+.margin{
+    margin-bottom: .54rem;
+    border-bottom: 1px solid transparent;
+}
+.all-content-app{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.handle{
+    padding:0 0 .10rem;
+    text-align: center;
+    margin: 0 auto;
+    -moz-justify-content: center!important;
+    justify-content: center!important;
+    -webkit-justify-content: center!important;
+}
+.handle>div{
+
+}
+.handle .good{
+    margin-right: .44rem;
+}
+.handle .good,.handle .bad{
+    width: .66rem;
+    display: inline-block;
+}
+.handle .good-img,.handle .bad-img{
+    width: .66rem;
+    height: .66rem;
+    background-image: url(/common/images/news/Oval.png);
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.handle .good-img img,.handle .bad-img img{
+    text-align: center;
+    width: .20rem;
+    height: auto;
+}
+.handle .good-img img{
+    position: relative;
+    left: .01rem;
+}
+.handle .bad-img img{
+    position: relative;
+    top: .02rem;
+}
+.good-num,.bad-num{
+    font-size: .16rem;
+    color: #BFBFBF;
+}
+.handle .blue{
+    color: #0263DE!important;
+}
+.flex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    display: -moz-flex;
+    display: box;
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+    box-pack: justify;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.flex-column{
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+    box-pack: justify;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    /* 09版 */
+    -webkit-box-orient: vertical;
+    /* 12版 */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    /*增加底部适配层*/
+    .ios_open {
+        box-sizing: border-box;
+        padding-bottom: .20rem!important;
+        height: .76rem!important;
+    }
+}
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, legend, li, ol, optgroup, option, p, pre, select, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+.news-content .title {
+    font-size: .22rem;
+    font-weight: 700;
+    margin-bottom: .10rem;
+    color: #333;
+    text-align: left;
+}
+
+.news-content .info {
+    /*margin-bottom: .12rem;*/
+    color: #BDBDBD;
+    font-size: .12rem;
+    text-align: left;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+}
+.news-content .info .logo-img{
+    width: .36rem;
+    height: .36rem;
+    border-radius: 50%;
+    margin-right: .10rem;
+}
+.news-content .info .logo-img img{
+    width: 100%;
+    height: auto;
+}
+.news-content .info .logo-name{
+    font-size: .15rem;
+    color: #333333;
+    margin-bottom: .04rem;
+}
+.news-content .content {
+    color: #666666;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: .16rem;
+    letter-spacing: .1px;
+    line-height: 1.6;
+}
+
+.news-content #content * {
+    font-family: helvetica neue, tahoma, hiragino sans gb, stheiti, wenquanyi micro hei, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    word-wrap: break-word !important;
+}
+
+.news-content #content h1,
+.news-content #content h2,
+.news-content #content h3,
+.news-content #content h4,
+.news-content #content h5,
+.news-content #content h6,
+.news-content #content ul,
+.news-content #content p {
+    margin: .10rem auto 0;
+}
+
+.news-content #content img {
+    width: auto !important;
+    height: auto !important;
+}
+
+.news-content #content p {
+    clear: both;
+    min-height: 1em
+}
+
+.news-content #content em {
+    font-style: italic
+}
+
+.news-content #content fieldset {
+    min-width: 0
+}
+
+.news-content #content blockquote {
+    margin: 0;
+    padding-left: 0.1rem;
+    border-left: 0.03rem solid #dbdbdb;
+}
+.news-content .page{
+    position: relative;
+    padding:.13rem .20rem 0;
+    background: #fff;
+    box-sizing: border-box;
+    max-height: inherit;
+    overflow: auto;
+}
+.award{
+    margin: .08rem  auto;
+    width: 100%;
+    padding: .07rem 0rem 0.06rem;
+    line-height: .24rem;
+    text-align: center;
+    background:rgba(255,203,66,0.29);
+    border-radius:.02rem;
+    border:.01rem solid rgba(255,115,66,1);
+    color: #FF7342;
+    font-size: .12rem;
+    display: none;
+}
+.award span{
+    margin: 0rem .01rem;
+}
+
+/* .banner,.banner1,.banner2,.banner3{
+    margin: .21rem .20rem .10rem;
+}
+.banner2,.banner3{
+    margin: .21rem 0rem .10rem;
+}
+.banner1,.banner3{
+    margin: 0rem .20rem .10rem;
+}
+.banner3{
+    margin: 0rem 0rem .10rem;
+} */
+.banner img,.banner1 img,.banner2 img,.banner3 img{
+    width: 100%;
+    height: auto;
+    margin-top:30px 
+}

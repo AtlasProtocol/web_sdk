@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>demo</title>
+    <style>
+        #atlasp-container {
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border: 1px solid black
+        }
+
+        #d-votebtn {
+            margin: 0 auto;
+            width: 120px;
+            height: 100px;
+        }
+
+        #d-input {
+            margin: 0 auto;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="atlasp-container"></div>
+<div id="d-input">
+    <input style="text-align: center;margin-top: 30px;width: 300px;height: 30px" id="input" type="text"
+           placeholder="请输入你的区块链地址" value="">
+</div>
+<div id="d-votebtn">
+    <button style="margin-top: 30px;width: 80px;height: 50px" type="button" onclick="clickAtp()">开始投票</button>
+</div>
+
+<script type="text/javascript" src="/atp.js"></script>
+<script>
+    function clickAtp() {
+
+        var adress = document.getElementById("input").value;
+        if (adress.toString() == '') {
+            alert("请输入区块链地址")
+            return
+        }
+        let callback = {
+            success: () => {
+                console.log('success')
+            },
+            failure: (errObj) => {
+                // console.log(errObj.errMsg)  //错误信息
+                // console.log(errObj.errCode) //错误码
+            },
+            cancel: () => {
+                console.log('cancel')
+            },
+            choosed: (item, retCallback) => {
+                // console.log(item.num) //选中的数值
+                // retCallback.cancel()  //取消时候调用
+                // retCallback.confirm('accid') //确认下一步时候调用传accid
+            }
+        }
+        let atp = new Atlasp('cbeditrvif2md98qv4bog', adress, true)
+        atp.setLocale('zh')
+        atp.bindContainer('atlasp-container')
+        atp.bindCallback(callback)
+        atp.start()
+    }
+</script>
+</body>
+</html>
